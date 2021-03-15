@@ -1,0 +1,80 @@
+syntax enable
+filetype off                 
+
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+
+Plugin 'VundleVim/Vundle.vim'
+Plugin 'dracula/vim'
+Plugin 'mhinz/vim-startify'
+Plugin 'ayu-theme/ayu-vim'
+Plugin 'doums/darcula'
+Plugin 'sheerun/vim-polyglot'
+Plugin 'ErichDonGubler/vim-sublime-monokai'
+Plugin 'flrnd/candid.vim'
+Plugin 'pineapplegiant/spaceduck'
+Plugin 'frazrepo/vim-rainbow'
+Plugin 'haishanh/night-owl.vim'
+Plugin 'octol/vim-cpp-enhanced-highlight'
+Plugin 'preservim/nerdcommenter'
+Plugin 'RRethy/vim-illuminate'
+Plugin 'bluz71/vim-moonfly-colors'
+Plugin 'NLKNguyen/papercolor-theme'
+Plugin 'chriskempson/base16-vim'
+Plugin 'tpope/vim-fugitive'
+Plugin 'morhetz/gruvbox'
+Plugin 'git://git.wincent.com/command-t.git'
+Plugin 'rstacruz/sparkup', {'rtp': 'vim/'}
+Plugin 'severin-lemaignan/vim-minimap'
+
+call vundle#end()           
+filetype plugin indent on  
+
+set noerrorbells
+set tabstop=4 softtabstop=4
+set shiftwidth=4
+set expandtab
+set smartindent
+set nu
+set relativenumber
+set smartcase
+set noswapfile
+set incsearch
+set spelllang=en_us
+set nocompatible              
+
+let g:airline_theme='luna'
+let g:rainbow_active = 1
+let mapleader="\<space>"
+let g:NERDSpaceDelims = 1
+let g:NERDCompactSexyComs = 1
+let g:NERDDefaultAlign = 'left'
+inoremap ii <Esc>
+nmap <C-n> :NERDTreeToggle<CR>
+vmap ++ <plug>NERDCommenterToggle
+nmap ++ <plug>NERDCommenterToggle
+hi Normal guibg=NONE ctermbg=NONE
+" set t_Co=16
+" let g:solarized_termcolors=256 
+" 
+set termguicolors
+set background=dark
+syntax on
+colorscheme gruvbox
+
+" To enable the lightline theme
+let g:lightline = { 'colorscheme': 'nightowl' }
+
+let g:cpp_class_scope_highlight = 1
+let g:cpp_member_variable_highlight = 1
+let g:cpp_class_decl_highlight = 1
+let g:cpp_posix_standard = 1
+let g:cpp_experimental_simple_template_highlight = 1
+let g:cpp_experimental_template_highlight = 1
+let g:cpp_concepts_highlight = 1
+let g:cpp_no_function_highlight = 1
+
+" let g:Illuminate_highlightUnderCursor = 1
+" let g:Illuminate_delay = 250
+
+noremap <C-j> :resize +1<CR>
