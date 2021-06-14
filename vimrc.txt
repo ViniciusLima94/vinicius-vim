@@ -1,14 +1,20 @@
 syntax enable
-filetype off                 
+filetype off    
 
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 
 Plugin 'VundleVim/Vundle.vim'
 Plugin 'dracula/vim'
+Plugin 'romgrk/doom-one.vim'
+Plugin 'wadackel/vim-dogrun'
+Plugin 'arcticicestudio/nord-vim'
 Plugin 'mhinz/vim-startify'
+Plugin 'jaredgorski/spacecamp'
 Plugin 'ayu-theme/ayu-vim'
 Plugin 'doums/darcula'
+Plugin 'junegunn/fzf', { 'do': { -> fzf#install() } } 
+Plugin 'ycm-core/YouCompleteMe'
 Plugin 'sheerun/vim-polyglot'
 Plugin 'ErichDonGubler/vim-sublime-monokai'
 Plugin 'flrnd/candid.vim'
@@ -17,6 +23,7 @@ Plugin 'frazrepo/vim-rainbow'
 Plugin 'haishanh/night-owl.vim'
 Plugin 'octol/vim-cpp-enhanced-highlight'
 Plugin 'preservim/nerdcommenter'
+Plugin 'preservim/nerdtree'
 Plugin 'RRethy/vim-illuminate'
 Plugin 'bluz71/vim-moonfly-colors'
 Plugin 'NLKNguyen/papercolor-theme'
@@ -27,8 +34,8 @@ Plugin 'git://git.wincent.com/command-t.git'
 Plugin 'rstacruz/sparkup', {'rtp': 'vim/'}
 Plugin 'severin-lemaignan/vim-minimap'
 
-call vundle#end()           
-filetype plugin indent on  
+call vundle#end()
+filetype plugin indent on
 
 set noerrorbells
 set tabstop=4 softtabstop=4
@@ -41,7 +48,7 @@ set smartcase
 set noswapfile
 set incsearch
 set spelllang=en_us
-set nocompatible              
+set nocompatible
 
 let g:airline_theme='luna'
 let g:rainbow_active = 1
@@ -49,22 +56,24 @@ let mapleader="\<space>"
 let g:NERDSpaceDelims = 1
 let g:NERDCompactSexyComs = 1
 let g:NERDDefaultAlign = 'left'
+
 inoremap ii <Esc>
 nmap <C-n> :NERDTreeToggle<CR>
 vmap ++ <plug>NERDCommenterToggle
 nmap ++ <plug>NERDCommenterToggle
 hi Normal guibg=NONE ctermbg=NONE
-" set t_Co=16
-" let g:solarized_termcolors=256 
+set t_Co=16
+let g:solarized_termcolors=256
 " 
 set termguicolors
 set background=dark
 syntax on
-colorscheme gruvbox
+colorscheme doom-one
 
 " To enable the lightline theme
 let g:lightline = { 'colorscheme': 'nightowl' }
 
+let g:completor_racer_binary = '/home/vinicius/anaconda3/bin/python'
 let g:cpp_class_scope_highlight = 1
 let g:cpp_member_variable_highlight = 1
 let g:cpp_class_decl_highlight = 1
@@ -78,3 +87,4 @@ let g:cpp_no_function_highlight = 1
 " let g:Illuminate_delay = 250
 
 noremap <C-j> :resize +1<CR>
+nmap <C-P> :FZF<CR>
